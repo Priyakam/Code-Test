@@ -1,0 +1,212 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3466), pid=7096, tid=1564
+#
+# JRE version:  (16.0.1+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (16.0.1+9-24, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 52265 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames TestRunner.TestRunner1
+
+Host: Intel(R) Celeron(R) CPU N3350 @ 1.10GHz, 2 cores, 3G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1151)
+Time: Tue Aug 24 16:39:45 2021 GMT Summer Time elapsed time: 0.579690 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000229311a1210):  JavaThread "Unknown thread" [_thread_in_vm, id=1564, stack(0x0000004959000000,0x0000004959100000)]
+
+Stack: [0x0000004959000000,0x0000004959100000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6687ca]
+V  [jvm.dll+0x7ca3c9]
+V  [jvm.dll+0x7cbb53]
+V  [jvm.dll+0x7cc1b3]
+V  [jvm.dll+0x242ea5]
+V  [jvm.dll+0x665589]
+V  [jvm.dll+0x65a175]
+V  [jvm.dll+0x2fc5ab]
+V  [jvm.dll+0x3037a6]
+V  [jvm.dll+0x352fee]
+V  [jvm.dll+0x35321f]
+V  [jvm.dll+0x2d3618]
+V  [jvm.dll+0x2d4854]
+V  [jvm.dll+0x79ccb1]
+V  [jvm.dll+0x360de1]
+V  [jvm.dll+0x77a990]
+V  [jvm.dll+0x3e55af]
+V  [jvm.dll+0x3e7081]
+C  [jli.dll+0x52fb]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa4fe7cbb8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000229311cdbc0 GCTaskThread "GC Thread#0" [stack: 0x0000004959100000,0x0000004959200000] [id=9984]
+  0x00000229311d6610 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000004959200000,0x0000004959300000] [id=7644]
+  0x00000229311d8880 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000004959300000,0x0000004959400000] [id=3972]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa4f6544d7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002293119d930] Heap_lock - owner thread: 0x00000229311a1210
+
+Heap address: 0x00000000c2800000, size: 984 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c2800000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa4fa324ed]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.125 Loaded shared library C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff6cb2a0000 - 0x00007ff6cb2ae000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\javaw.exe
+0x00007ffa79730000 - 0x00007ffa79925000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa77980000 - 0x00007ffa77a3d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffa76e60000 - 0x00007ffa77129000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffa77540000 - 0x00007ffa77640000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa6ee90000 - 0x00007ffa6eea8000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\jli.dll
+0x00007ffa78b70000 - 0x00007ffa78d10000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffa77340000 - 0x00007ffa77362000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffa78900000 - 0x00007ffa7892a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa77370000 - 0x00007ffa7747b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffa77690000 - 0x00007ffa7772d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa6ee70000 - 0x00007ffa6ee89000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\VCRUNTIME140.dll
+0x00007ffa61860000 - 0x00007ffa61afa000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffa77a40000 - 0x00007ffa77ade000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffa79210000 - 0x00007ffa79240000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffa73fb0000 - 0x00007ffa73fbc000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\vcruntime140_1.dll
+0x00007ffa6e7a0000 - 0x00007ffa6e831000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\msvcp140.dll
+0x00007ffa4f370000 - 0x00007ffa4ff1b000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\server\jvm.dll
+0x00007ffa77820000 - 0x00007ffa778cc000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa792f0000 - 0x00007ffa7938b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa78930000 - 0x00007ffa78a5a000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa79240000 - 0x00007ffa79248000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffa64a90000 - 0x00007ffa64a99000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffa78eb0000 - 0x00007ffa78f1b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffa627b0000 - 0x00007ffa627d7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa6fb00000 - 0x00007ffa6fb0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffa756f0000 - 0x00007ffa75702000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffa73fa0000 - 0x00007ffa73faa000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\jimage.dll
+0x00007ffa74c60000 - 0x00007ffa74e44000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffa62a30000 - 0x00007ffa62a5c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffa77480000 - 0x00007ffa77503000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa6e720000 - 0x00007ffa6e745000 	C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 52265 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames TestRunner.TestRunner1
+java_class_path (initial): C:\Users\pradh\eclipse-workspace\Cucumber\target\test-classes;C:\Users\pradh\eclipse-workspace\Cucumber\target\classes;C:\Users\pradh\Downloads\selenium-java-3.141.59\client-combined-3.141.59.jar;C:\Users\pradh\Downloads\selenium-java-3.141.59\client-combined-3.141.59-sources.jar;C:\Users\pradh\Downloads\selenium-java-3.141.59\libs\byte-buddy-1.8.15.jar;C:\Users\pradh\Downloads\selenium-java-3.141.59\libs\commons-exec-1.3.jar;C:\Users\pradh\Downloads\selenium-java-3.141.59\libs\guava-25.0-jre.jar;C:\Users\pradh\Downloads\selenium-java-3.141.59\libs\okhttp-3.11.0.jar;C:\Users\pradh\Downloads\selenium-java-3.141.59\libs\okio-1.14.0.jar;D:\Priya Software\Selenium Software\selenium-server-standalone-3.141.59.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-java\6.11.0\cucumber-java-6.11.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-core\6.11.0\cucumber-core-6.11.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-gherkin\6.11.0\cucumber-gherkin-6.11.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-gherkin-messages\6.11.0\cucumber-gherkin-messages-6.11.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\messages\15.0.0\messages-15.0.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\tag-expressions\3.0.1\tag-expressions-3.0.1.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-expressions\10.3.0\cucumber-expressions-10.3.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\datatable\3.5.0\datatable-3.5.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-plugin\6.11.0\cucumber-plugin-6.11.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\docstring\6.11.0\docstring-6.11.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\html-formatter\13.0.0\html-formatter-13.0.0.jar;C:\Users\pradh\.m2\repository\io\cucumber\create-meta\4.0.0\create-meta-4.0.0.jar;C:\Users\pradh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\pradh\.m2\repository\io\cucumber\cucumber-junit\6.11.0\cucumber-junit-6.11.0
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 2                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 2                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1031798784                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5826188                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122916026                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122916026                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1031798784                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:/Users/pradh/Downloads/eclipse-java-2021-06-R-win32-x86_64/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205/jre/bin/server;C:/Users/pradh/Downloads/eclipse-java-2021-06-R-win32-x86_64/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\TXE Components\iCLS\;C:\Program Files\Intel\TXE Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\TXE Components\DAL\;C:\Program Files (x86)\Intel\TXE Components\DAL\;C:\Program Files\Intel\TXE Components\IPT\;C:\Program Files (x86)\Intel\TXE Components\IPT\;C:\Users\pradh\Desktop\axis2-1.6.2\bin;C:\Program Files\Java\jdk-16.0.2\bin;C:\Program Files\Java\jdk1.8.0_301\bin;D:\Priya Software\Git\cmd;D:\Priya Software\Maven\apache-maven-3.8.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\pradh\AppData\Local\Microsoft\WindowsApps;;C:\Users\pradh\Downloads\eclipse-java-2021-06-R-win32-x86_64\eclipse;
+USERNAME=pradh
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 92 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1151)
+OS uptime: 2 days 19:14 hours
+
+CPU: total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 6 model 92 stepping 9 microcode 0x32, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, aes, erms, clmul, sha, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 3928M (442M free)
+TotalPageFile size 5328M (AvailPageFile size 38M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 47M, peak: 109M
+
+vm_info: OpenJDK 64-Bit Server VM (16.0.1+9-24) for windows-amd64 JRE (16.0.1+9-24), built on Mar 26 2021 19:30:07 by "mach5one" with MS VC++ 16.7 (VS2019)
+
+END.
